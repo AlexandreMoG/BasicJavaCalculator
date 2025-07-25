@@ -17,18 +17,19 @@ public class Application {
             System.out.println("3. Multiplication");
             System.out.println("4. Division");
             System.out.println("5. Power");
-            System.out.println("6. Stop");
+            System.out.println("6. Square root");
+            System.out.println("7. Stop");
             System.out.print("Choose an operation : ");
 
             int choice = scanner.nextInt();
-            if ( choice < 1 || choice > 6) {
+            if ( choice < 1 || choice > 7) {
                 System.out.println("Invalid choice.");
             }
 
-            double a,b;
+            double a=0.0,b=0.0;
             double result;
 
-            if (choice == 6) {
+            if (choice == 7) {
                 System.out.println("End of program.");
                 scanner.close();
                 return;
@@ -36,8 +37,12 @@ public class Application {
 
             System.out.print("First operand : ");
             a = scanner.nextDouble();
-            System.out.print("Second operand : ");
-            b = scanner.nextDouble();
+            if (choice != 6)
+            {
+                System.out.print("Second operand : ");
+                b = scanner.nextDouble();
+            }
+
             
             switch (choice) {
                 case 1:
@@ -63,6 +68,10 @@ public class Application {
                 case 5:
                     result = Calculator.power(a,b);
                     System.out.println("Power result : " + result);
+                    break;
+                case 6:
+                    result = Calculator.sqrt(a);
+                    System.out.println("Square root result : " + result);
                     break;
                 default:
                     System.out.println("Invalid choice.");

@@ -56,4 +56,13 @@ public class Calculator {
     public static double power(double a, double b){
         return Math.pow(a,b);
     }
+
+    /**
+     * Square root of the first number
+     * @param a first number
+     * @return square root of a
+     */
+    public static double sqrt(double a){
+        return Math.sqrt(a);
+    }
 }

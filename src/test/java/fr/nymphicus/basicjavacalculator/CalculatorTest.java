@@ -2,6 +2,8 @@ package fr.nymphicus.basicjavacalculator;
 
 import org.junit.Test;
 
+import fr.nymphicus.basicjavacalculator.Calculator;
+
 import static org.junit.Assert.*;
 
 /*
@@ -65,5 +67,14 @@ public class CalculatorTest {
     public void testPower(){
         assertEquals(1.0, Calculator.power(6.0, 0.0), 0.0001);
         assertEquals(256.0, Calculator.power(2.0, 8.0), 0.0001);
+    }
+
+    /*
+     * Square root test
+     */
+    @Test
+    public void testSqrt(){
+        assertEquals(Double.NaN, Calculator.sqrt(-1.0), 0.0001);
+        assertEquals(16.0, Calculator.sqrt(256.0), 0.0001);
     }
 }

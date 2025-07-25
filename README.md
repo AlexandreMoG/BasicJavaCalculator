@@ -26,6 +26,8 @@ I used Maven to build the project and JUnit for unit testing.
 - Subtraction
 - Multiplication
 - Division
+- Power
+- Square Root
 
 ## Installation
 
