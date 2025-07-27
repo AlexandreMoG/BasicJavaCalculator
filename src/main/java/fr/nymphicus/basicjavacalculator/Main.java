@@ -1,9 +1,5 @@
 package fr.nymphicus.basicjavacalculator;
 
-import java.util.Arrays;
-
-import org.omg.PortableInterceptor.NON_EXISTENT;
-
 public class Main {
 
     public static void main(String[] args) {
