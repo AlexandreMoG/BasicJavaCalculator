@@ -24,18 +24,44 @@
   <build>
     <pluginManagement>
       <plugins>
+        <!-- Compiler -->
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.8.1</version>
         </plugin>
+        <!-- Exec -->
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
           <version>3.1.0</version>
-          <configuration>
-            <mainClass>fr.nymphicus.basicjavacalculator.Main</mainClass>
-          </configuration>
+          <executions>
+            <!-- Graphic mode (default)-->
+            <execution>
+              <id>default-cli</id> <!-- Maven search for default-cli when mvn exec:java -->
+              <goals>
+                <goal>java</goal>
+              </goals>
+              <configuration>
+                <mainClass>fr.nymphicus.basicjavacalculator.Main</mainClass>
+              </configuration>
+            </execution>
+
+            <!-- Console mode -->
+            <execution>
+              <id>console</id>
+              <phase>none</phase> <!--phase none so it's not auto executed -->
+              <goals>
+                <goal>java</goal>
+              </goals>
+              <configuration>
+                <mainClass>fr.nymphicus.basicjavacalculator.Main</mainClass>
+                <arguments>
+                  <argument>console</argument>
+                </arguments>
+              </configuration>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>

@@ -24,6 +24,7 @@ public class Application {
             int choice = scanner.nextInt();
             if ( choice < 1 || choice > 7) {
                 System.out.println("Invalid choice.");
+                continue;
             }
 
             double a=0.0,b=0.0;
